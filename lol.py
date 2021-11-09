@@ -41,13 +41,13 @@ def remove(i2):
             print(f"removed {i} from gc {i2}")
         elif r.status_code == 429:
             print(f"ratelimited")
-def creategc():
+def creategc(): #gc create for ur victims
     for i in users:
         headers = {"Authorization": token}
         json = {"recipients":['811042929040687177','903621585053835275','791835116980666418','903244322181361755']}
         r = requests.post('https://discordapp.com/api/v6/users/@me/channels', headers=headers, json=json)
         if r.status_code == 200 or r.status_code == 201 or r.status_code == 204:
-            print(f"created gcs with\n {json}")
+            print(f"created gc")
         elif r.status_code == 429:
             print(f"ratelimited")
 while True:
